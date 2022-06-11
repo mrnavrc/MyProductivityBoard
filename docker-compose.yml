@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  PHP:
+    image: php:8.1-cli
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/MyProductivityBoard
+    command: [php, -S, 0.0.0.0:80, -t, /MyProductivityBoard]
+  MySQL:
+    image: mysql:8.0.0
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 1910932882
+      MYSQL_DATABASE: db_MyProductivityBoard
+      MYSQL_USER: mrnavrc
+      MYSQL_PASSWORD: 1910932882
+  Node:
+    image: node:lts
+    ports:
+      - "4000:4000"
+
