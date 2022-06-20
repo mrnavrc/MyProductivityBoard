@@ -11,8 +11,8 @@ if (isset($_POST['submit-btn'])) {
 
         // prepare sql and parameters
         $reg = $conn->prepare("INSERT INTO db_MyProductivityBoard.users (username, email, password, password2)
-          VALUES ('$username','$email','$password','$password2')");
-        $reg->execute();
+          VALUES (username=?,email=?,password=?,password2=?)");
+        $reg->execute([$username, $email, $password, $password2]);
 
         echo "<br> New records created successfully";
     } catch (PDOException $e) {

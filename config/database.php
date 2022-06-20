@@ -11,7 +11,6 @@ try {
     // $conn->setAttribute ... conn is instance, setAttribute method/function of PDO
     // new PDO class "->" access to properties, functions, variables of class/object
     // :: to call a static method (public static function name())
-    echo "Connected successfully";
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }

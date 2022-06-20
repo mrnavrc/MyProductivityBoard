@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php
-include '../src/inc/header.php'
+require '../src/inc/header.php'
 ?>
 
 </body>

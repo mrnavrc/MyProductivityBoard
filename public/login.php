@@ -9,11 +9,11 @@ if (isset($_POST['login-btn'])) {
         $password_log = $_POST['password_log'];
         $log = $conn->prepare("SELECT username, password FROM db_MyProductivityBoard.users WHERE 
 username=? AND password=?");
-        $log->execute(array($username_log, $password_log));
+        $log->execute([$username_log, $password_log]);
         if ($log->rowCount() > 0) {
             $_SESSION['username_log'] = $username_log;
             if (isset($_SESSION['username_log'])) {
-                echo "Welcome <strong>" . $_SESSION['username_log'] . "</strong><br/>";
+                header('location: todo.php');
             } else {
                 echo "Something went wrong, try it again";
             }
@@ -33,7 +33,7 @@ username=? AND password=?");
 </head>
 <body>
 <main>
-    <form action="login.php" method="post">
+    <form action="" method="post">
         <h1>Sign Up</h1>
         <input type="text" name="username_log" placeholder="Enter Username">
         <input type="password" name="password_log" placeholder="Enter Password">
