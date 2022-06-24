@@ -7,7 +7,7 @@ services:
       - "8080:80"
     volumes:
       - ./:/MyProductivityBoard
-    command: [php, -S, 0.0.0.0:80, -t, /MyProductivityBoard]
+    command: php -S 0.0.0.0:80 -t /MyProductivityBoard
   mysql:
     image: mysql:8.0
     ports:
@@ -16,7 +16,13 @@ services:
       MYSQL_ROOT_PASSWORD: 1910932882
       MYSQL_DATABASE: db_MyProductivityBoard
   node:
-    image: node:18.0
-    ports:
-      - "4000:4000"
+    image: node:lts
+    user: node
+    command: tail -f /dev/null
+    volumes:
+      - ./:/MyProductivityBoard
+    working_dir: /MyProductivityBoard
+    environment:
+      - "NODE_ENV=development"
+
 
