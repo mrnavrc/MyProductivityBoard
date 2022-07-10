@@ -82,25 +82,31 @@ if (isset($_POST['delete'])) {
 
 
 <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        Hello, world! This is a toast message.
+    <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <img src="..." class="rounded me-2" alt="...">
+            <strong class="me-auto">My Productivity Board</strong>
+            <small><?php echo date('H:i') ?></small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Hello, world! This is a toast message.
+        </div>
     </div>
-    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-            aria-label="Close"></button>
 </div>
-</div>
-<script>
-    const toastTrigger = document.getElementById('submitNote')
-    const toastLiveExample = document.getElementById('liveToast')
-    if (toastTrigger) {
-        toastTrigger.addEventListener('submit', function () {
-            const toast = new bootstrap.Toast(toastLiveExample)
 
-            toast.show()
-        })
+<?php
+if (isset($_POST['submitNote'])) {
+    echo "<script>
+    function showToast() {
+       new bootstrap.Toast(toastLiveExample).show();
+
     }
-</script>
-
+    const toastLiveExample = document.getElementById('liveToast')
+    showToast();
+</script>";
+}
+?>
 
 <script src="../src/components/RichTextEditor.js"></script>
 <?php
