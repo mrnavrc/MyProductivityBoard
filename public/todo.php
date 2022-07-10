@@ -55,11 +55,21 @@ include '../src/inc/header.php'
             </div>
         </div>
         <h1 class="display-6">Quick To-Do</h1>
-        <div class="container border border-dark">
-            <div class="row">
-                <div class="col-4">lorem</div>
-                <div class="col-4">lorem</div>
-                <div class="col-4">lorem</div>
+        <div class="container">
+            <div class="row gx-2 justify-content-center">
+
+                <div class="col-lg-4 col-md-12">
+                    lorem
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    lorem
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    lorem
+                </div>
+
             </div>
         </div>
     </div>
@@ -69,5 +79,9 @@ include '../src/inc/header.php'
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
+<?php
+require '../src/inc/Footer.php'
+?>
 </body>
+
 </html>
